@@ -1,9 +1,7 @@
-"use client";
-
 import ContactCTA from '../components/home/ContactCTA';
 import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Contact Us | AI Automation Agency',
   description: 'Get in touch with our AI automation experts to discuss your business needs and automation opportunities.',
 };
