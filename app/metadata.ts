@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Automation Agency | Engineer Growth Through AI",
-    description: "Tailored AI workflows for founders, marketers, and teams ready to scale.",
+    description: "Tailored AI workflows for founders, marketers, and teams ready to scale",
     creator: "@aiagency",
   },
   robots: {
