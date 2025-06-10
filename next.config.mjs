@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: [],
     formats: ['image/avif', 'image/webp'],
@@ -21,10 +20,18 @@ const nextConfig = {
     });
     return config;
   },
-  // Internationalization settings (if needed)
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
+  // Turbopack configuration
+  turbopack: {
+    // Resolving extensions for module resolution
+    resolveExtensions: ['.tsx', '.ts', '.jsx', '.js', '.json'],
+    // Rules for specific file types (if needed)
+    rules: {
+      // Example: Add rules for SVG files if needed
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
   },
 };
 

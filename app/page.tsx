@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from './components/home/HeroSection';
 import SocialProof from './components/home/SocialProof';
 import HowItWorks from './components/home/HowItWorks';

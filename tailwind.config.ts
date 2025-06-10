@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,40 +9,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        // Base colors using direct color values instead of CSS variables
+        background: "#0a0a0a", // Dark mode default
+        foreground: "#ededed", // Dark mode default
+        light: {
+          background: "#ffffff",
+          foreground: "#171717",
+        },
         
         // Brand colors
         primary: {
-          DEFAULT: "var(--primary)",
-          light: "var(--primary-light)",
-          dark: "var(--primary-dark)",
+          DEFAULT: "#8b5cf6", // var(--primary)
+          light: "#a78bfa",   // var(--primary-light)
+          dark: "#7c3aed",    // var(--primary-dark)
         },
         secondary: {
-          DEFAULT: "var(--secondary)",
-          light: "var(--secondary-light)",
-          dark: "var(--secondary-dark)",
+          DEFAULT: "#3b82f6", // var(--secondary)
+          light: "#60a5fa",   // var(--secondary-light)
+          dark: "#2563eb",    // var(--secondary-dark)
         },
         
         // UI colors
-        accent: "var(--accent)",
-        success: "var(--success)",
-        warning: "var(--warning)",
-        error: "var(--error)",
+        accent: "#f87171",    // var(--accent)
+        success: "#34d399",   // var(--success)
+        warning: "#fbbf24",   // var(--warning)
+        error: "#f87171",     // var(--error)
         
         // Neutral colors (explicitly defined for consistency)
         gray: {
-          50: "var(--gray-50)",
-          100: "var(--gray-100)",
-          200: "var(--gray-200)",
-          300: "var(--gray-300)",
-          400: "var(--gray-400)",
-          500: "var(--gray-500)",
-          600: "var(--gray-600)",
-          700: "var(--gray-700)",
-          800: "var(--gray-800)",
-          900: "var(--gray-900)",
-          950: "var(--gray-950)",
+          50: "#111827",
+          100: "#1f2937",
+          200: "#374151",
+          300: "#4b5563",
+          400: "#6b7280",
+          500: "#9ca3af",
+          600: "#d1d5db",
+          700: "#e5e7eb",
+          800: "#f3f4f6",
+          900: "#f9fafb",
+          950: "#ffffff",
         },
       },
       fontFamily: {
@@ -54,9 +58,9 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-dark": "var(--gradient-dark)",
-        "gradient-glow": "var(--gradient-glow)",
+        "gradient-primary": "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
+        "gradient-dark": "linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%)",
+        "gradient-glow": "linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(59, 130, 246, 0.5) 100%)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

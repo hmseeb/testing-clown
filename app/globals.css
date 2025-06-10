@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@reference "tailwindcss";
+
 /* Custom variables and theme setup */
 :root {
   /* Base colors */
@@ -88,39 +90,83 @@
   }
   
   body {
-    @apply bg-background text-foreground;
+    background-color: #0a0a0a;
+    color: #ededed;
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-bold tracking-tight;
+    font-weight: bold;
+    letter-spacing: -0.025em;
   }
   
   /* Custom component classes */
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, #8b5cf6, #3b82f6);
   }
   
   .gradient-bg {
-    @apply bg-gradient-to-r from-primary to-secondary;
+    background-image: linear-gradient(to right, #8b5cf6, #3b82f6);
   }
   
   .card {
-    @apply bg-gray-900 border border-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
   
   .button-primary {
-    @apply bg-gradient-to-r from-primary to-secondary text-white font-medium py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    background-image: linear-gradient(to right, #8b5cf6, #3b82f6);
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    transform: scale(1);
+  }
+  
+  .button-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
   
   .button-secondary {
-    @apply bg-transparent border border-gray-700 text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:bg-gray-800;
+    background-color: transparent;
+    border: 1px solid #4b5563;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .button-secondary:hover {
+    background-color: #1f2937;
   }
 }
 
@@ -186,6 +232,7 @@
 /* Responsive utilities */
 @media (max-width: 640px) {
   .container {
-    @apply px-4;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
