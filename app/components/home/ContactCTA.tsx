@@ -75,7 +75,7 @@ const ContactCTA = () => {
     <section 
       id="contact"
       ref={sectionRef}
-      className="py-20 bg-gray-900 relative overflow-hidden border-t border-gray-800 sticky bottom-0 z-40"
+      className="py-20 bg-gray-900 relative overflow-hidden border-t border-gray-800"
     >
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"></div>
